@@ -11,9 +11,7 @@ import SwiftUI
 struct GreenThumbApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                VegetableListScreen()
-            }
+            VegetableTabBarScreen()
         }
     }
 }
