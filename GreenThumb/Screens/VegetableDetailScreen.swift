@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct VegetableDetailScreen: View {
     
@@ -140,4 +141,5 @@ struct DetailRow: View {
     NavigationStack {
         VegetableDetailScreen(vegetable: PreviewData.loadVegetables()[0])
     }
+    .modelContainer(previewContainer)
 }
