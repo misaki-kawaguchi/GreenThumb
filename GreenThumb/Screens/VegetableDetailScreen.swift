@@ -11,11 +11,20 @@ import SwiftData
 struct VegetableDetailScreen: View {
     
     let vegetable: Vegetable
+    @Environment(\.modelContext) private var context
     
     @State private var showSeedOrSeedlingMenu: Bool = false
     
-    private func saveVegetableToMyGarden(with planOption: PlantOption) {
+    private func saveVegetableToMyGarden(with plantOption: PlantOption) {
         
+        let myGarderVegetable = MyGardenVagetable(vegetable: vegetable, plantOption: plantOption)
+        context.insert(myGarderVegetable)
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     var body: some View {

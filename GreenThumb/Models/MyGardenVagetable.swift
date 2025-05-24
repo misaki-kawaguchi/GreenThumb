@@ -12,11 +12,11 @@ import SwiftData
 class MyGardenVagetable {
     
     var vegetable: Vegetable
-    var plamtOption: PlantOption
+    var plantOption: PlantOption
     var datePlanted: Date = Date()
     
-    init(vegetable: Vegetable, plamtOption: PlantOption) {
+    init(vegetable: Vegetable, plantOption: PlantOption) {
         self.vegetable = vegetable
-        self.plamtOption = plamtOption
+        self.plantOption = plantOption
     }
 }
