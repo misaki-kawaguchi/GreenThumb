@@ -53,6 +53,10 @@ struct SeedOrSeedlingView: View {
             }
             
         }
+        .padding()
+        .background(Color(.systemGray6))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .padding()
     }
 }
 
