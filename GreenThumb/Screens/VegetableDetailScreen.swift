@@ -14,6 +14,10 @@ struct VegetableDetailScreen: View {
     
     @State private var showSeedOrSeedlingMenu: Bool = false
     
+    private func saveVegetableToMyGarden(with planOption: PlantOption) {
+        
+    }
+    
     var body: some View {
         ScrollView {
             
@@ -90,6 +94,7 @@ struct VegetableDetailScreen: View {
         })
         .sheet(isPresented: $showSeedOrSeedlingMenu, content: {
             SeedOrSeedlingView(onSelected: { option in
+                saveVegetableToMyGarden(with: option)
             })
             .presentationDetents([.fraction(0.25)])
             .presentationBackground(Color(.systemGray6))
