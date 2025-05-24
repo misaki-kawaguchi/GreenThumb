@@ -11,6 +11,8 @@ struct VegetableDetailScreen: View {
     
     let vegetable: Vegetable
     
+    @State private var showSeedOrSeedlingMenu: Bool = false
+    
     var body: some View {
         ScrollView {
             
@@ -74,6 +76,21 @@ struct VegetableDetailScreen: View {
             }
             .padding()
         }
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showSeedOrSeedlingMenu = true
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.title2)
+                        .foregroundColor(.green)
+                }
+            }
+        })
+        .sheet(isPresented: $showSeedOrSeedlingMenu, content: {
+            SeedOrSeedlingView(onSelected: { option in
+            })
+        })
         .navigationTitle(vegetable.name)
     }
 }
